@@ -12,7 +12,7 @@
         <!-- Right Column -->
         <td style="width: 50%; padding: 10px; vertical-align: top; text-align: center; color: #000;">
         <u><strong><span style="white-space: nowrap;">UCB Reference #:</span></strong></u> <br>
-        <strong>{{insert UCB_REFERENCE_NUMBER 'default=default'}}</strong>
+        <strong>{{ insert UCB_REFERENCE_NUMBER 'default=default' }}</strong>
         </td>
     </tr>
 </table>
@@ -22,7 +22,7 @@
   <tr>
     <td colspan="2" style="padding: 15px; background-color: #e6f2ff; border-radius: 12px; font-family: Arial, sans-serif; font-size: 16px; color: #333;">
         You had a debt with <strong>{{ insert original_creditor 'default=default'}}</strong> with account number ending in 
-        <strong>{{insert client_reference_number_truncated 'default=default'}}</strong>, currently owned by 
+        <strong>{{ insert client_reference_number_truncated 'default=default' }}</strong>, currently owned by 
         <strong>{{ insert creditor 'default=default'}}</strong> with account number ending in 
         <strong>{{ insert uhg_account_number 'default=default'}}</strong>.
     </td>
