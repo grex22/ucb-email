@@ -1,83 +1,79 @@
+<body style="max-width:600px;">
 
 *****************SECTION 1***********
-<div style="background-color: #FFFFFF; padding: 10px; border-radius: 0px; text-align: left; text-align: center; font-family: Arial, sans-serif; font-size: 16px; color: #333;">
-<a href="https://ucbinc.com" style="text-decoration: none; color: inherit;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #e6f0fa; font-size: 16px; border-radius: 10px; overflow: hidden;">
+<table width="100%" cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif; font-size: 16px; color: #333; background-color: #e6f0fa; font-size: 16px; border-radius: 10px; overflow: hidden;">
     <tr>
-      <!-- Left Column -->
-      <td style="width: 50%; padding: 10px; vertical-align: top; text-align: center; color: #000;">
-        <u><strong>Ucbinc.com</strong><br></u>
-        <strong><span style="white-space: nowrap;">1-866-603-0622</span></strong><strong>
-      </strong></td>
+        <!-- Left Column -->
+        <td style="width: 50%; padding: 10px; vertical-align: top; text-align: center; color: #000;">
+        <u><strong><a href="https://ucbinc.com">Ucbinc.com</a></strong></u><br>
+        <strong><span style="white-space: nowrap;">1-866-603-0622</span></strong>
+        </td>
 
-      <!-- Right Column -->
-      <td style="width: 50%; padding: 10px; vertical-align: top; text-align: center; color: #000;">
+        <!-- Right Column -->
+        <td style="width: 50%; padding: 10px; vertical-align: top; text-align: center; color: #000;">
         <u><strong><span style="white-space: nowrap;">UCB Reference #:</span></strong></u> <br>
-        <strong>{{insert UCB_REFERENCE_NUMBER 'default=default'}}<strong>
-      </strong></strong></td>
+        <strong>{{insert UCB_REFERENCE_NUMBER 'default=default'}}</strong>
+        </td>
     </tr>
-  </table>
-</a></div>
+</table>
 
 ***************** SECTION 2***********
-<table style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+<table cellspacing="0" style="width:100%;font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <tr>
-    <td>
-      <!-- Box 1 -->
-      <div style="padding: 15px; background-color: #e6f2ff; margin-bottom: 15px; border-radius: 12px; font-family: Arial, sans-serif; font-size: 16px; color: #333;">
-        <strong></strong>You had a debt with <strong>{{ insert original_creditor 'default=default'}}</strong> with account number ending in 
+    <td colspan="2" style="padding: 15px; background-color: #e6f2ff; border-radius: 12px; font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+        You had a debt with <strong>{{ insert original_creditor 'default=default'}}</strong> with account number ending in 
         <strong>{{insert client_reference_number_truncated 'default=default'}}</strong>, currently owned by 
         <strong>{{ insert creditor 'default=default'}}</strong> with account number ending in 
         <strong>{{ insert uhg_account_number 'default=default'}}</strong>.
-      </div>
-
-<!-- Box 2 -->
-<div style="padding: 15px; background-color: #e6f2ff; margin-bottom: 15px; border-radius: 12px; font-family: Arial, sans-serif; font-size: 16px; color: #333;">
-  <strong>As of {{ insert as_of_date 'default=default' }},</strong>
-  <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 5px; font-family: Arial, sans-serif; font-size: 16px; color: #333;">
-    <strong>you owed:</strong>
-    <strong>${{ insert total_charges 'default=default' }}</strong>
-  </div>
-</div>
-
-      <!-- Box 3 -->
-      <div style="padding: 15px; background-color: #e6f2ff; margin-bottom: 15px; border-radius: 12px; font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+    </td>
+</tr>
+    <tr><td height="15"></td></tr>
+    <tr>
+        <td style="padding: 15px; background-color: #e6f2ff; border-radius: 12px 0 0 12px; font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+        <strong>As of {{ insert as_of_date 'default=default' }}, you owed:</strong>
+        </td>
+        <td style="text-align:right;padding: 15px; background-color: #e6f2ff; border-radius: 0 12px 12px 0; font-family: Arial, sans-serif; font-size: 16px; color: #333; ">${{ insert total_charges 'default=default' }}</td>
+    </tr>
+    <tr><td height="15"></td></tr>
+    <tr>
+        <td colspan="2" style="padding: 15px; background-color: #e6f2ff; border-radius: 12px; font-family: Arial, sans-serif; font-size: 16px; color: #333;">
         <strong>Between {{ insert as_of_date 'default=default'}} and today:</strong><br>
         <table style="width: 100%; font-family: Arial, sans-serif; font-size: 16px; color: #333; border-collapse: collapse; margin-top: 10px;">
           <tr>
             <td>Interest charged:</td>
-            <td style="text-align: right; font-family: Arial, sans-serif; font-size: 16px; color: #333;"><strong>+${{ insert interest 'default=default'}}</strong></td>
+            <td style="text-align: right; font-family: Arial, sans-serif; font-size: 16px; color: #333;vertical-align: bottom;"><strong>+ ${{ insert interest 'default=default'}}</strong></td>
           </tr>
           <tr>
             <td>Fees charged:</td>
-            <td style="text-align: right; font-family: Arial, sans-serif; font-size: 16px; color: #333;"><strong>+${{ insert fees 'default=default'}}</strong></td>
+            <td style="text-align: right; font-family: Arial, sans-serif; font-size: 16px; color: #333;vertical-align: bottom;"><strong>+ ${{ insert fees 'default=default'}}</strong></td>
           </tr>
           <tr>
-            <td style="text-align: left font-family: Arial, sans-serif; font-size: 16px; color: #333;;">
-              <div style="display: flex; flex-direction: column; font-family: Arial, sans-serif; font-size: 16px; color: #333;">
-                Payments/credits<br>
-                applied:
-              </div>
+            <td style="text-align: left; font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+              Payments/credits applied:
             </td>
             <td style="text-align: right; vertical-align: bottom;">
-              <strong>-${{ insert payments_credits 'default=default' }}</strong>
+              <strong>- ${{ insert payments_credits 'default=default' }}</strong>
             </td>
           </tr>
         </table>
-      </div>
+        </td>
+    </tr>
+    <tr><td height="15"></td></tr>
+</table>
 
 <!-- Box 4 -->
-<div style="padding: 15px; background-color: #e6f2ff; margin-bottom: 15px; border-radius: 12px; font-family: Arial, sans-serif; font-size: 16px; color: #333;">
-  <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
-    <strong>Total amount of the</strong>
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 4px; font-family: Arial, sans-serif; font-size: 16px; color: #333;">
-    <strong>debt now:</strong>
-    <strong>${{ insert current_balance 'default=default'}}</strong>
-  </div>
-</div>
-    </td>
-    <td></td>
-  </tr>
+<table width="100%" cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif;background-color: #e6f0fa; font-size: 16px; border-radius: 10px; overflow: hidden;">
+    <tr>
+        <td style="padding: 15px; background-color: #e6f2ff; ">
+            <strong>Total amount of the debt now:</strong>
+        </td>
+        <td style="padding: 15px; background-color: #e6f2ff; text-align:right; font-family: Arial, sans-serif; font-size: 16px; color: #333; vertical-align: bottom;">
+            <strong>${{ insert current_balance 'default=default'}}</strong>
+        </td>
+    </tr>
 </table>
+
 ******************SECTION 3 *********************
+
+
+</body>
